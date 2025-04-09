@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Mail, Phone, Home } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
               <span className="text-lg font-bold">Ajou University Library</span>
             </div>
             <p className="text-sm opacity-80">
-              Ajou University in Tashkent Library provides access to a wide range of academic resources to support
+              Ajou University Library provides access to a wide range of academic resources to support
               learning, teaching, and research.
             </p>
           </div>
@@ -47,26 +48,26 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <address className="not-italic">
-              <p className="text-sm opacity-80 mb-2">
-              113 and 113A, Asalabad street, Yashnabad district, 100204, Tashkent city, Republic of Uzbekistan.
-              </p>
-              <p className="text-sm opacity-80 mb-2">Phone: +998 71 208-69-69</p>
-              <p className="text-sm opacity-80">Email: library@ajou.uz</p>
-            </address>
-          </div>
+      <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+      <address className="not-italic space-y-2">
+        <p className="text-sm opacity-80 flex items-center gap-2">
+          <Home className="text-yellow-400 w-7 h-7" />
+          113 and 113A, Asalabad street, Yashnabad district, 100204, Tashkent city, Republic of Uzbekistan.
+        </p>
+        <p className="text-sm opacity-80 flex items-center gap-2">
+          <Phone className="text-yellow-400 w-5 h-5" />
+          +998 71 208-69-69
+        </p>
+        <p className="text-sm opacity-80 flex items-center gap-2">
+          <Mail className="text-yellow-400 w-5 h-5" />
+          library@ajou.uz
+        </p>
+      </address>
+    </div>
         </div>
         <div className="border-t border-white/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm opacity-70">© 2023 Ajou University in Tashkent. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-sm opacity-70 hover:opacity-100">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm opacity-70 hover:opacity-100">
-              Terms of Use
-            </Link>
-          </div>
+          <p className="text-sm opacity-70">© {new Date().getFullYear() } Ajou University in Tashkent. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>

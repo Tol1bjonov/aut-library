@@ -1,9 +1,22 @@
+"use client";
 import Link from "next/link"
 import { MapPin, Bus, Train, Phone, Mail, Globe } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import Swal from 'sweetalert2';
 
 export default function ContactPage() {
+  const handleClick = (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: 'Good job!',
+      text: 'Your message has been sent successfully!',
+      icon: 'success',
+      confirmButtonText: 'Cool',
+      background: '#0a2a52', // alertning fon rangi
+      color: '#ffd700', // matn rangi
+    })
+  };
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar activePage="contact" />
@@ -26,7 +39,13 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="h-[400px] bg-gray-200 relative">
-              {/* This would be replaced with an actual map */}
+              {<iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.4217372631542!2d69.33892359999999!3d41.27792500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae5f7e492a66c1%3A0x77427ccd87b4ed9!2sAjou%20University%20in%20Tashkent!5e0!3m2!1sru!2s!4v1744230467005!5m2!1sru!2s"
+                  className="w-full h-full border-0"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-white" />
@@ -178,6 +197,7 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
+                  onClick={handleClick}
                   className="px-6 py-3 bg-[#ffd700] hover:bg-[#e6c200] text-[#0a2a52] font-bold rounded-md transition-colors"
                 >
                   Send Message
@@ -190,7 +210,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex justify-between pb-2 border-b border-gray-200">
                   <span className="font-medium">Monday - Friday</span>
-                  <span>9:00 AM - 8:00 PM</span>
+                  <span>9:00 AM - 10:00 PM</span>
                 </div>
                 <div className="flex justify-between pb-2 border-b border-gray-200">
                   <span className="font-medium">Saturday</span>
@@ -198,7 +218,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex justify-between pb-2 border-b border-gray-200">
                   <span className="font-medium">Sunday</span>
-                  <span>12:00 PM - 5:00 PM</span>
+                  <span>Not work</span>
                 </div>
               </div>
 

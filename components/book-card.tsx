@@ -10,19 +10,16 @@ interface BookCardProps {
   title: string
   author: string
   genre: string
-  available: boolean
 }
 
-export function BookCard({ cover, title, author, genre, available }: BookCardProps) {
+export function BookCard({ cover, title, author, genre }: BookCardProps) {
   return (
     <Card className="overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
       <div className="aspect-[2/3] relative">
         <img src={cover || "/placeholder.svg"} alt={`Cover of ${title}`} className="object-cover w-full h-full" />
         <div className="absolute top-2 right-2">
-          {available ? (
+          {(
             <Badge className="bg-green-100 text-green-800 hover:bg-green-100 border-0">Available</Badge>
-          ) : (
-            <Badge className="bg-red-100 text-red-800 hover:bg-red-100 border-0">Checked Out</Badge>
           )}
         </div>
       </div>
@@ -40,14 +37,13 @@ export function BookCard({ cover, title, author, genre, available }: BookCardPro
       <CardFooter className="p-4">
         <Button
           className={
-            available
-              ? "w-full gap-1 bg-[#ffd700] hover:bg-[#e6c200] text-[#0a2a52] font-medium"
-              : "w-full gap-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium"
+             "w-full gap-1 bg-[#ffd700] hover:bg-[#e6c200] text-[#0a2a52] font-medium"
+              
           }
           size="sm"
         >
           <BookOpen className="h-4 w-4" />
-          {available ? "Check Out" : "Join Waitlist"}
+          {"Check Out" }
         </Button>
       </CardFooter>
     </Card>
