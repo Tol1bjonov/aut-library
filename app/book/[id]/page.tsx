@@ -76,13 +76,6 @@ export default function BookPage({ params }: { params: { id: string } }) {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/3 lg:w-1/4">
-                <div className="aspect-[2/3] overflow-hidden rounded-lg">
-                  <img
-                    src={book.cover || "/placeholder.svg"}
-                    alt={`Cover of ${book.title}`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
               </div>
               <div className="flex-1 space-y-6">
                 <div>
